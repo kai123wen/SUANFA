@@ -1,4 +1,4 @@
-package Sort;
+package SortmaopaoSort;
 
 public class Maopao {
 	public void firstSortArray(int array[]) {
@@ -15,7 +15,7 @@ public class Maopao {
 				}
 			}
 		}
-		System.out.println("执行次数："+count);
+		System.out.println("执行次数：" + count);
 	}
 
 	public void secondSortArray(int array[]) {
@@ -37,7 +37,7 @@ public class Maopao {
 				break;
 			}
 		}
-		System.out.println("执行次数："+count);
+		System.out.println("执行次数：" + count);
 	}
 
 //	这个函数就是要解决 如 3 2 4 5 6 这样的序列的排序问题
@@ -45,28 +45,25 @@ public class Maopao {
 	public void thirdSortArray(int array[]) {
 		int temp = 0;
 		int count = 0;
-		int boundaryTemp = 0;
-		int boundary = array.length;
+		int boundary = array.length - 1;
 		boolean sorted = false;
-
-		for (int i = 0; i < boundary - 1; i++) {
+		for (int i = 0; i < array.length - 1; i++) {
 			sorted = false;
-			for (int j = 0; j < boundary - 1; j++) {
+			for (int j = 0; j < boundary; j++) {
 				count++;
 				if (array[j] > array[j + 1]) {
 					temp = array[j];
 					array[j] = array[j + 1];
 					array[j + 1] = temp;
 					sorted = true;
-					boundaryTemp = j;
+					boundary = j;
 				}
 			}
-			boundary = boundaryTemp;
-			
+
 			if (sorted == false) {
 				break;
 			}
 		}
-		System.out.println("执行次数："+count);
+		System.out.println("执行次数：" + count);
 	}
 }
